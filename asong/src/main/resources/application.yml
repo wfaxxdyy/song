@@ -1,3 +1,10 @@
+#端口
+server:
+  port: 8080
+  servlet:
+    context-path: /asong
+
+
 #mybatis-plus
 mybatis-plus:
   mapper-locations: classpath:/META-INF/mapper/**/*Mapper.xml
@@ -12,11 +19,26 @@ mybatis-plus:
     cache-enabled: false
 
 spring:
+  application:
+    name: song-asong
   datasource:
     url: jdbc:mysql://evan.c3o6e82cgeo9.ap-northeast-1.rds.amazonaws.com:3306/test?useSSL=false&serverTimezone=UTC
     username: root
     password: wfaxx19950129
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      # Nacos服务地址
+      server-addr: localhost:8848
+      # Nacos的服务注册与发现
+      discovery:
+        # Nacos服务地址
+        #server-addr: localhost:8848
+        # 配置集群名称，也就是机房位置，例如：HZ 杭州
+        cluster-name: HZ
+        # Nacos可视化命名空间ID
+    # namespace:
+
 
 apollo:
   bootstrap:
