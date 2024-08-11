@@ -1,0 +1,18 @@
+# Nacos认证信息
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 212.129.154.222:8848
+        namespace: 23b6e317-e067-45cd-8f4d-788ee0fe5439
+        username: nacos
+        password: nacos
+    gateway:
+      routes: # 网关路由配置
+        - id: asong # 路由ID，自定义填写，唯一即可
+          # uri 有两种配置方法，一种 http ，一种 lb:服务名称
+          #          uri: http://127.0.0.1:18088/  # 路由目标地址
+          uri: lb://song-asong # 路由的目标地址 lb 就是负载均衡，后边跟服务名称
+          predicates: #路由断言 ，白话就是判断请求符不符合路由规则条件
+            - Path=/asong/** # 这个是按照路径匹配，只要以 /asong/ 开头就符合条件
+

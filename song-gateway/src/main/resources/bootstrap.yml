@@ -1,0 +1,9 @@
+#端口 8000~8500
+server:
+  port: 8089
+
+spring:
+  application:
+    name: song-gateway
+  profiles:
+    active: dev
