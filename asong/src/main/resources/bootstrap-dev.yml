@@ -1,0 +1,16 @@
+# Nacos认证信息
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 212.129.154.222:8848
+        namespace: 23b6e317-e067-45cd-8f4d-788ee0fe5439
+        username: nacos
+        password: nacos
+      config:
+        server-addr: 212.129.154.222:8848
+        namespace: 23b6e317-e067-45cd-8f4d-788ee0fe5439
+        file-extension: yaml
+        username: nacos
+        password: nacos
+

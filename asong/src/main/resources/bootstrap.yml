@@ -1,0 +1,11 @@
+#端口
+server:
+  port: 8080
+  servlet:
+    context-path: /asong
+
+spring:
+  application:
+    name: song-asong
+  profiles:
+    active: dev
