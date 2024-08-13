@@ -11,6 +11,8 @@
     <modules>
         <module>song-common</module>
         <module>asong</module>
+        <module>song-gateway</module>
+        <module>song-leecode</module>
     </modules>
 
     <properties>
