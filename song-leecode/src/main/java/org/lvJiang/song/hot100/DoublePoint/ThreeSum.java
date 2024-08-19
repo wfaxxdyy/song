@@ -1,5 +1,7 @@
 package org.lvJiang.song.hot100.DoublePoint;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -33,11 +35,32 @@ import java.util.List;
 public class ThreeSum {
 
     public static void main(String[] args) {
-
+        List<List<Integer>> lists = threeSum(new int[]{1,2,-2,-1});
+        System.out.println(11);
     }
 
     public static List<List<Integer>> threeSum(int[] nums) {
-
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        for (int k = 0; k < nums.length-2; k++) {
+            if (nums[k] > 0) {
+                break;
+            }
+            if(k > 0 && nums[k] == nums[k - 1]) continue;
+            int i=k+1;
+            int j= nums.length-1;
+            while (i<j){
+                if (nums[k] + nums[i] + nums[j] > 0) {
+                    while(i<j && nums[j] == nums[--j]);
+                } else if (nums[k] + nums[i] + nums[j] < 0) {
+                    while(i<j && nums[i] == nums[++i]);
+                } else {
+                    result.add(new ArrayList<>(Arrays.asList(nums[k], nums[i], nums[j])));
+                    while(i < j && nums[i] == nums[++i]);
+                    while(i < j && nums[j] == nums[--j]);
+                }
+            }
+        }
+        return result;
     }
 }
