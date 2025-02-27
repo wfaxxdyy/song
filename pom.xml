@@ -13,6 +13,7 @@
         <module>asong</module>
         <module>song-gateway</module>
         <module>song-leecode</module>
+        <module>song-eightAsshole</module>
     </modules>
 
     <properties>
